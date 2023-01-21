@@ -24,10 +24,12 @@ android-test-androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:u
 debug-androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 debug-androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 
-# Hilt
+# hilt
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 ## kapt
 hilt-kapt = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+
+timber = "com.jakewharton.timber:timber:5.0.1"
 
 # androidTestImpl
 android-test-androidx-test-espresso ="androidx.test.espresso:espresso-core:3.4.0"
