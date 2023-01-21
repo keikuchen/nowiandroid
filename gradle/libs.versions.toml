@@ -1,6 +1,14 @@
+[versions]
+accompanist = "0.28.0"
+
 [libraries]
+# base
 androidx-core = "androidx.core:core-ktx:1.9.0"
 androidx-lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:2.6.0-alpha02"
+
+# accompanist
+com-google-accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist" }
+com-google-accompanist-pagerindicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanist" }
 
 # compose
 ## bom
@@ -25,6 +33,10 @@ test-junit = "junit:junit:4.13.2"
 base = [
     "androidx-core",
     "androidx-lifecycle",
+]
+accompanist-pager = [
+    "com-google-accompanist-pager",
+    "com-google-accompanist-pagerindicators",
 ]
 compose = [
     "androidx-compose-mateiral3",

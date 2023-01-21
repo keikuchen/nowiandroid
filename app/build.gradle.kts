@@ -51,6 +51,10 @@ android {
 dependencies {
     implementation(libs.bundles.base)
 
+    // accompanist
+    implementation(libs.bundles.accompanist.pager)
+
+    // compose
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose)
     androidTestImplementation(libs.bundles.compose.androidtest)
