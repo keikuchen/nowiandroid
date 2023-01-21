@@ -16,8 +16,8 @@ debug-androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" 
 debug-androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 
 # androidTestImpl
-android-test-androidx-test-ext = "androidx.test.ext:junit:1.1.3"
 android-test-androidx-test-espresso ="androidx.test.espresso:espresso-core:3.4.0"
+android-test-androidx-test-ext = "androidx.test.ext:junit:1.1.3"
 # testImpl
 test-junit = "junit:junit:4.13.2"
 
@@ -31,14 +31,16 @@ compose = [
     "androidx-compose-ui-tooling-preview",
     "androidx-activity-compose",
 ]
+compose-androidtest = [
+    "android-test-androidx-compose-ui-test-junit4",
+]
 compose-debug = [
     "debug-androidx-compose-ui-tooling",
     "debug-androidx-compose-ui-test-manifest",
 ]
 androidtest = [
-    "android-test-androidx-compose-ui-test-junit4",
-    "android-test-androidx-test-ext",
     "android-test-androidx-test-espresso",
+    "android-test-androidx-test-ext",
 ]
 test = [
     "test-junit",
