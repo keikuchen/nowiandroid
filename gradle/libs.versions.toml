@@ -31,14 +31,14 @@ compose = [
     "androidx-compose-ui-tooling-preview",
     "androidx-activity-compose",
 ]
+compose-debug = [
+    "debug-androidx-compose-ui-tooling",
+    "debug-androidx-compose-ui-test-manifest",
+]
 androidtest = [
     "android-test-androidx-compose-ui-test-junit4",
     "android-test-androidx-test-ext",
     "android-test-androidx-test-espresso",
-]
-debug = [
-    "debug-androidx-compose-ui-tooling",
-    "debug-androidx-compose-ui-test-manifest",
 ]
 test = [
     "test-junit",
