@@ -1,5 +1,6 @@
 [versions]
 accompanist = "0.28.0"
+hilt = "2.44"
 
 [libraries]
 # base
@@ -7,8 +8,8 @@ androidx-core = "androidx.core:core-ktx:1.9.0"
 androidx-lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:2.6.0-alpha02"
 
 # accompanist
-com-google-accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist" }
-com-google-accompanist-pagerindicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanist" }
+accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist" }
+accompanist-pagerindicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanist" }
 
 # compose
 ## bom
@@ -20,8 +21,13 @@ androidx-activity-compose = "androidx.activity:activity-compose:1.6.1"
 ## androidTestImpl
 android-test-androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
 ## debugImpl
-debug-androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 debug-androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+debug-androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+
+# Hilt
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+## kapt
+hilt-kapt = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 
 # androidTestImpl
 android-test-androidx-test-espresso ="androidx.test.espresso:espresso-core:3.4.0"
@@ -35,8 +41,8 @@ base = [
     "androidx-lifecycle",
 ]
 accompanist-pager = [
-    "com-google-accompanist-pager",
-    "com-google-accompanist-pagerindicators",
+    "accompanist-pager",
+    "accompanist-pagerindicators",
 ]
 compose = [
     "androidx-compose-mateiral3",
