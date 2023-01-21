@@ -1,0 +1,43 @@
+complexity:
+  # 1メソッドの行数
+  LongMethod:
+    # デフォルト60は厳しいので変更
+    threshold: 100
+  # 1メソッドの引数の数
+  LongParameterList:
+    # Composeは引数が多くなりがちなので、多めに許容
+    functionThreshold: 12
+    # デフォルト値が指定されている引数をカウントに入れない
+    ignoreDefaultParameters: true
+
+naming:
+  FunctionNaming:
+    # composeの命名慣習を許容するため、関数名が大文字始まりでも良しとする
+    functionPattern: '[a-zA-Z][a-zA-Z0-9]*'
+  TopLevelPropertyNaming:
+    # composeガイドラインではトップレベルの定数をキャメルケースとしているため、それに従う
+    constantPattern: '[A-Z][A-Za-z0-9]'
+
+style:
+  # class内の諸々の順番を厳格にする
+  ClassOrdering:
+    active: true
+  # 実装中に使うコメント(TODO等)の禁止を解除する
+  ForbiddenComment:
+    active: false
+  MagicNumber:
+    # Color(0xFFEFB8C8)のような表記を許容する
+    ignorePropertyDeclaration: true
+  # 複数行のif文で中括弧を必須とする
+  MandatoryBracesIfStatements:
+    active: true
+  # Lambda式で複数行の場合、itの使用を禁止する
+  MultilineLambdaItParameter:
+    active: true
+  UnusedPrivateMember:
+    # ComposableのPreviewを不要なものとみなされないようにする
+    ignoreAnnotated:
+      - 'Preview'
+  # 空コレクション生成をemptyXXX()で行うことを必須とする
+  UseEmptyCounterpart:
+    active: true
