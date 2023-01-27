@@ -12,19 +12,19 @@ import keikuchen.nowiandroid.ui.theme.NowiAndroidTheme
 @Composable
 fun NowiApp() {
     NowiAndroidTheme {
-        // A surface container using the 'background' color from the theme
-        Surface(
-            modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colorScheme.background
-        ) {
-            Greeting("Android")
-        }
+        Greeting()
     }
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun Greeting(name: String = "Android") {
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colorScheme.background
+    ) {
+        Text(text = "Hello $name!")
+    }
+
 }
 
 @Preview(showBackground = true)
