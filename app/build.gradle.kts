@@ -1,6 +1,6 @@
 plugins {
-    kotlin("android")
-    id("com.android.application")
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.kotlinAndroid)
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
 }
@@ -38,12 +38,13 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.0"
+        kotlinCompilerExtensionVersion = "1.5.4"
     }
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
