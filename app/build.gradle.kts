@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "keikuchen.nowiandroid"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "keikuchen.nowiandroid"
         minSdk = 30
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
