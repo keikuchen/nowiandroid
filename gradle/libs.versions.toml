@@ -1,8 +1,16 @@
 [versions]
 accompanist = "0.28.0"
+activity = "1.9.0"
 agp = "8.6.0-alpha02"
+androidxCore = "1.13.1"
+androidxEspresso = "3.5.1"
+androidxTestExt = "1.1.5"
+androidxLifecycle = "2.8.0"
+composeBom = "2024.05.00"
 hilt = "2.44"
+junit = "4.13.2"
 kotlin = "1.9.20"
+timber = "5.0.1"
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -13,18 +21,18 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 [libraries]
 accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist" }
 accompanist-pagerindicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanist" }
-androidx-activity-compose = "androidx.activity:activity-compose:1.9.0"
-androidx-compose-bom = "androidx.compose:compose-bom:2024.05.00"
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity" }
+androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
 androidx-compose-mateiral3 = { module = "androidx.compose.material3:material3" }
 androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
 androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
-androidx-core = "androidx.core:core-ktx:1.13.1"
-androidx-lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:2.8.0"
-androidx-test-espresso = "androidx.test.espresso:espresso-core:3.5.1"
-androidx-test-ext = "androidx.test.ext:junit:1.1.5"
+androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidxCore" }
+androidx-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidxLifecycle" }
+androidx-test-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "androidxEspresso" }
+androidx-test-ext = { module = "androidx.test.ext:junit", version.ref = "androidxTestExt" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-kapt = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
-timber = "com.jakewharton.timber:timber:5.0.1"
-junit = "junit:junit:4.13.2"
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+junit = { module = "junit:junit", version.ref = "junit" }
