@@ -52,24 +52,25 @@ android {
 }
 
 dependencies {
-    implementation(libs.bundles.base)
-
-    // accompanist
-    implementation(libs.bundles.accompanist.pager)
-
-    // compose
+    implementation(libs.accompanist.pager)
+    implementation(libs.accompanist.pagerindicators)
+    implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.bundles.compose)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.bundles.compose.androidtest)
-    debugImplementation(libs.bundles.compose.debug)
-
-    // hilt
+    implementation(libs.androidx.compose.mateiral3)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.lifecycle)
     implementation(libs.hilt.android)
+    implementation(libs.timber)
     kapt(libs.hilt.kapt)
 
-    implementation(libs.timber)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.test.espresso)
+    androidTestImplementation(libs.androidx.test.ext)
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
 
-    androidTestImplementation(libs.bundles.androidtest)
-    testImplementation(libs.bundles.test)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+
+    testImplementation(libs.junit)
 }
