@@ -1,18 +1,18 @@
 plugins {
-    kotlin("android")
-    id("com.android.application")
-    kotlin("kapt")
-    id("com.google.dagger.hilt.android")
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "keikuchen.nowiandroid"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "keikuchen.nowiandroid"
         minSdk = 30
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -38,12 +38,13 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.0"
+        kotlinCompilerExtensionVersion = "1.5.4"
     }
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
@@ -51,24 +52,25 @@ android {
 }
 
 dependencies {
-    implementation(libs.bundles.base)
-
-    // accompanist
-    implementation(libs.bundles.accompanist.pager)
-
-    // compose
+    implementation(libs.accompanist.pager)
+    implementation(libs.accompanist.pagerindicators)
+    implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.bundles.compose)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.bundles.compose.androidtest)
-    debugImplementation(libs.bundles.compose.debug)
-
-    // hilt
+    implementation(libs.androidx.compose.mateiral3)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.lifecycle)
     implementation(libs.hilt.android)
-    kapt(libs.hilt.kapt)
-
     implementation(libs.timber)
+    ksp(libs.hilt.compiler)
 
-    androidTestImplementation(libs.bundles.androidtest)
-    testImplementation(libs.bundles.test)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.test.espresso)
+    androidTestImplementation(libs.androidx.test.ext)
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+
+    testImplementation(libs.junit)
 }
