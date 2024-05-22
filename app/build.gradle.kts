@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
-    kotlin("kapt")
     alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -62,7 +62,7 @@ dependencies {
     implementation(libs.androidx.lifecycle)
     implementation(libs.hilt.android)
     implementation(libs.timber)
-    kapt(libs.hilt.kapt)
+    ksp(libs.hilt.compiler)
 
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.test.espresso)
